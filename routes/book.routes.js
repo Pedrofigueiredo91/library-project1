@@ -51,16 +51,22 @@ router.post("/books/create", (req, res, next) => {
     .catch(error => next(error));
 });
 
-router.get('/books/:bookId/edit', (req, res, next) => {
-  const { bookId } = req.params;
- 
-  Book.findById(bookId)
-    .populate("author")
-    .then(bookToEdit => {
-      // console.log(bookToEdit);
-      res.render('books/book-edit.hbs', { book: bookToEdit }); // <-- add this line
-    })
-    .catch(error => next(error));
+router.get('/books/:bookId/edit', async (req, res, next) => {
+    const { bookId } = req.params;
+
+    try {
+        const bookDetails = await Book.findById(bookId);
+        const authors = await Author.find();
+
+        const data = { 
+            book: bookDetails, 
+            authors: authors 
+        }
+
+        res.render('books/book-edit.hbs', data)
+    } catch(error){
+        next(error)
+    }
 });
 router.post('/books/:bookId/edit', (req, res, next) => {
   const { bookId } = req.params;
