@@ -8,8 +8,13 @@
   </label>
 
   <label> Author:
-    <input type="text" name="author" value="{{book.author.name}}" />
-  </label>
+        <select name="author">
+            {{#each authors}}
+                <option value={{this._id}}>{{this.name}}</option>
+            {{/each}}
+        </select>
+    </label>
+
 
   <label> Description:
     <textarea name="description" cols="30" rows="4">{{book.description}}</textarea>
