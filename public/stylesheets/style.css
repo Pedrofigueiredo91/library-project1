@@ -1,55 +1,36 @@
 body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: #333;
-        }
-        .book {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .book-details {
-            flex: 1;
-        }
-        .buttons {
-            display: flex;
-            gap: 10px;
-        }
-form {
-        border: 1px solid #ccc;
-        padding: 15px;
-        margin-top: 10px;
-        background-color: #f7f7f7;
-    }
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
-    form label {
-        display: block;
-        margin-bottom: 5px;
-    }
+a {
+  color: #00b7ff;
+}
 
-    form input[type="text"] {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-    }
+h1 {
+  color: 15px;
+}
 
-    form button {
-        background-color: #333;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
 
-    form button:hover {
-        background-color: #555;
-    }
+nav a {
+  padding: 0 1rem;
+  border-right: 1px solid #999;
+}
+
+nav a:last-child {
+  border-right: none;
+}
+
+.warning {
+  padding: 1rem;
+  font-weight: bold;
+  border: 1px solid rgb(255, 213, 135);
+  background-color: rgb(255, 213, 135);
+}
